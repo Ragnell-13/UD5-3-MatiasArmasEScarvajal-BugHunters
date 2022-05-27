@@ -13,13 +13,13 @@ public class Persona implements Usuario {
 
     @Override
     public void obtenerLibro(int posicion, Biblioteca biblioteca) {
-        String titulo = biblioteca.prestarLibro(posicion);
+        String titulo = Biblioteca.prestarLibro(posicion);
         librosPrestados.add(titulo);
     }
 
     @Override
-    public String obtenerLibroAleatorio() {
-        String titulo = biblioteca.prestarLibroAleatorio();
+    public String obtenerLibroAleatorio(Biblioteca biblioteca) {
+        String titulo = Biblioteca.prestarLibroAleatorio();
         librosPrestados.add(titulo);
         return titulo;
     }
@@ -47,6 +47,7 @@ public class Persona implements Usuario {
             output += contador + " --> " + titulo + "\n";
             contador ++;
         }
+        return output;
 
     }
 }

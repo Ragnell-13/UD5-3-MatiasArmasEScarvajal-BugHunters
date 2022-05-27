@@ -1,6 +1,6 @@
 package com.digitalcastaway.biblioteca;
 
-public abstract class Usuario {
+public interface Usuario {
 
     public abstract void obtenerLibro(int posicion, Biblioteca biblioteca);
     public abstract String obtenerLibroAleatorio(Biblioteca biblioteca);

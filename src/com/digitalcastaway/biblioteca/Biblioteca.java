@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 public class Biblioteca {
     private String name;
-    private ArrayList<Integer> catalogoLibros;
+    private static ArrayList<String> catalogoLibros;
 
     public Biblioteca(String name) {
         this.name = name;
@@ -21,18 +21,18 @@ public class Biblioteca {
 
         int contador = 0;
 
-        while(it.next()) {
+        while(it.hasNext()) {
             System.out.println(contador + " --> " + it.hasNext());
             contador--;
         }
     }
 
-    public String prestarLibro(int posicion) {
+    public static String prestarLibro(int posicion) {
         return catalogoLibros.remove(posicion);
     }
 
-    public String prestarLibroAleatorio() {
-        int posicionAleatoria = (int) (Math.random() * this.catalogoLibros.size());
+    public static String prestarLibroAleatorio() {
+        int posicionAleatoria = (int) (Math.random() * catalogoLibros.size());
         return prestarLibro(posicionAleatoria);
     }
 
